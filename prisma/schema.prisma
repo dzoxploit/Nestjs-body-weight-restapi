@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model berat {
+  id          Int           @id @default(autoincrement())
+  tanggal     DateTime      @db.Timestamp(0)
+  max  Int
+  min  Int
+  perbedaan Int
+  
+}
